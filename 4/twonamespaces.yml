@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name:  client-a 
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name:  client-b 

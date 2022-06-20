@@ -1,0 +1,44 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-wordpress-a
+  namespace: client-a
+spec:
+  tls:
+  - hosts:
+      - wp01.example.com
+    secretName: secret-wordpress-a
+  rules:
+  - host: wp01.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wordpress-service
+            port:
+              number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-wordpress-b
+  namespace: client-b
+spec:
+  tls:
+  - hosts:
+      - wp02.wordpress 
+    secretName: secret-wordpress-a
+  rules:
+  - host: wp02.wordpress 
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wordpress-service
+            port:
+              number: 80
+

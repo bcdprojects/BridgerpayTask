@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+  namespace: database
+  annotations:
+    replicator.v1.mittwald.de/replicate-from: client-a/mysql-service,client-b/mysql-service
+spec:
+  nodeName:  gke-cluster-1-default-pool-15f4ca30-5mfg
+  selector:
+    app: mysql
+  ports:
+  - protocol: TCP
+    port: 3306
+    targetPort: 3306
+  clusterIP: None

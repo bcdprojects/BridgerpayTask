@@ -1,0 +1,14 @@
+CREATE DATABASE bcdexedbbcd;
+
+CREATE TABLE `bridgerpaytable` (
+  `id` int(11) NOT NULL,
+  `current_datetime` TIMESTAMP NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `comment` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `bridgerpaytable`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `bridgerpaytable`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
